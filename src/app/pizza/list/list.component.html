@@ -1,0 +1,19 @@
+<h1>PIZZA PICK UP</h1>
+<div class="info">
+  <p>Start picking up the pizza you want to enjoy, and proceed to checkout.</p>
+  <div class="btn-container">
+    <button class="checkout-btn" (click)="proceedCheckout()">CHECKOUT</button>
+    <button class="order-btn" (click)="proceedOrder()">VIEW ORDERS</button>
+  </div>
+</div>
+<div class="container">
+  <div *ngFor="let pizza of pizzas" class="card">
+    <div class="title">{{ pizza.name }} <i class="material-icons" [title]="'USD: ' + pizza.price + ' Ingredients: ' +pizza.ingredients.join(', ')">info</i></div>
+    <img [src]="pizza.image" alt="" />
+    <div class="selection">
+      <button [disabled]="!pizza.quantity" (click)="subsPizza(pizza)">-</button>
+      <span>Quantity: {{pizza.quantity}} - Total USD: {{pizza.quantity * pizza.price}}</span>
+      <button (click)="addPizza(pizza)">+</button>
+    </div>
+  </div>
+</div>

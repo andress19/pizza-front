@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="title">
+    <h1>CHECKOUT</h1>
+    <button class="main-btn" (click)="back()">edit items</button>
+  </div>
+  <fieldset>
+    <legend>Checkout form:</legend>
+    <label>
+      Customer:
+      <input class="customer" placeholder="Enter your full name" type="text" formControlName="customer" />
+      <span class="required" *ngIf="customer.errors?.required">*required</span>
+    </label>
+
+    <label>
+      e-mail:
+      <input class="mail" placeholder="Enter your e-mail" type="email" formControlName="mail" />
+      <span class="required" *ngIf="mail.errors?.required">*required</span>
+      <span class="required" *ngIf="mail.errors?.pattern">*invalid</span>
+    </label>
+    <br />
+    <label>
+      Address:
+      <input class="address" placeholder="Enter your address" type="text" formControlName="address" />
+      <span class="required" *ngIf="address.errors?.required">*required</span>
+    </label>
+
+    <label>
+      Phone:
+      <input placeholder="Enter your phone number" type="tel" formControlName="phone" />
+      <span class="required" *ngIf="phone.errors?.required">*required</span>
+    </label>
+    <br>
+    <button [class]="!items?.length || phone.errors || address.errors || mail.errors || customer.errors ? 'save-btn-disabled' :'save-btn'" [disabled]="!items?.length || phone.errors || address.errors || mail.errors || customer.errors">Save</button>
+    <hr />
+    <h2>Items to checkout</h2>
+    <div>
+      <span *ngIf="!items?.length">No items to checkout</span>
+      <ul>
+        <li *ngFor="let item of items">
+          Pizza: {{item.name}} - Quantity: {{item.quantity}} - Total: {{item.price * item.quantity}}
+        </li>
+      </ul>
+      <span>Total: {{total}}</span>
+    </div>
+  </fieldset>
+</form>

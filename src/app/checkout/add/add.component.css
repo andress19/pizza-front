@@ -1,0 +1,73 @@
+h1 {
+  text-align: -webkit-center;
+}
+label {
+  margin: 0 2rem 0 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+fieldset {
+  min-height: 20rem;
+}
+
+.save-btn {
+  height: 2rem;
+  width: 6rem;
+  background-color: #1976D2;
+  color: white;
+  border-color: white;
+  font-weight: bold;
+}
+
+.save-btn-disabled {
+  height: 2rem;
+  width: 6rem;
+  background-color: lightgray;
+  cursor: pointer;
+  pointer-events: none;
+  color: white;
+  border-color: white;
+  font-weight: bold;
+}
+
+.title {
+  text-align: -webkit-center;
+}
+
+input {
+  margin: 1rem;
+  border-radius: 7%;
+  height: 1.5rem;
+  border-color: lightgray;
+}
+
+.main-btn {
+  color: white;
+  background-color: #1976D2;
+  border-color: white;
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.required {
+  color: red;
+  text-transform: lowercase;
+  font-size: 0.7rem;
+}
+
+.customer {
+  width: 20rem;
+}
+
+.mail {
+  width: 24rem;
+}
+
+.address {
+  width: 40rem;
+}

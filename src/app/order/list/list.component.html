@@ -1,0 +1,13 @@
+<div class="title">
+  <h1>Orders</h1>
+  <button class="main-btn" (click)="back()">pizza list</button>
+</div>
+<hr>
+<div class="card-container">
+  <div *ngFor="let order of orders; let i = index" class="card">
+    <div class="card-title">Order {{i + 1}}</div>
+    <p><span>Customer mail:</span> {{order.mail}}</p>
+    <p><span>Total:</span> USD {{order.total}}</p>
+    <p><span>Checkout date:</span> {{order.date}}</p>
+  </div>
+</div>
